@@ -29,6 +29,11 @@ h4 {
     font-family: 'Montserrat', sans-serif;
 }
 
+h5 {
+    font-size: 0.8rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
 footer {
     margin-bottom: 30px;
 }
@@ -81,6 +86,14 @@ footer {
 }
 
 #main-title {
+    padding: 0px 30px 30px 30px;
+}
+
+#calculator-title {
+    padding: 0px 30px 0px 30px;
+}
+
+#calculator-description {
     padding: 0px 30px 30px 30px;
 }
 
