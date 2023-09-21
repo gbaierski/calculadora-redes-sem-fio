@@ -59,6 +59,13 @@ h4 {
     align-items: center;
 }
 
+#operations-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 50px;
+}
+
 #calculator-box {
     width: 95%;
     height: 500px;
@@ -77,4 +84,39 @@ h4 {
 
 .text-gray {
     color: #373737;
+}
+
+.operations-line {
+    display: flex;
+    justify-content: space-around;
+}
+
+.operation {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    padding: 7.5px;
+    background-color: #00a859;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    transition: all 0.2s ease;
+}
+
+.operation:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+    background-color: #028146;
+}
+
+.operation-icon {
+    font-size: 1.8rem;
+}
+
+.operation-name {
+    font-size: 0.9rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
 }
