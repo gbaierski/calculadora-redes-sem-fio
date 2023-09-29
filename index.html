@@ -67,6 +67,36 @@
             <div class="calculator-box" id="shannon" style="display: block;">
                 <h3 class="calculator-title text-white">Shannon - Capacidade Máxima de Canal:</h3>
                 <h5 class="calculator-description text-white">Calcular a capacidade máxima de transmissão de dados em um canal de comunicação</h5>
+                <div class="calculator-form">
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="shannon-larguraBandaHz"><b>Largura de banda</b>:</label>
+                        <input class="calculator-input" id="shannon-larguraBandaHz" name="shannon-larguraBandaHz" type="number" value="">
+                        <span class="calculator-measurement text-white">Hz</span>
+                    </div>
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="shannon-sinalRuidoDb"><b>Sinal-Ruído</b>:</label>
+                        <input class="calculator-input" id="shannon-sinalRuidoDb" name="shannon-sinalRuidoDb" type="number" value="">
+                        <span class="calculator-measurement text-white">Db</span>
+                    </div>
+                </div>
+                <div class="calculator-formula text-white">
+                    <div class="calculator-tooltip"><b>C</b>
+                        <span class="calculator-tooltiptext">Capacidade Máxima de Canal <br>(bps)</span>
+                    </div>
+                    =
+                    <div class="calculator-tooltip"><b id="shannon-campo-larguraBandaHz">L</b>
+                        <span class="calculator-tooltiptext">Largura de banda <br>(Hz)</span>
+                    </div>
+                    * log2(1 + 
+                    <div class="calculator-tooltip"><b id="shannon-campo-sinalRuidoDb">S/R</b>
+                        <span class="calculator-tooltiptext">Sinal-Ruído <br>(Mw)</span>
+                    </div>
+                    )
+                </div>
+                <div id="shannon-result" class="calculator-result text-white"></div>
+                <div class="calculate-box">
+                    <button class="calculate-button text-white" type="button" onclick="shannon()">Calcular</button>
+                </div>
             </div>
             <div class="calculator-box" id="nyquist">
                 <h3 class="calculator-title text-white">Nyquist - Taxa de Nyquist:</h3>

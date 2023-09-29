@@ -12,8 +12,18 @@ function reset() {
 }
 
 // Função para calcular a Capacidade Máxima de Canal (Shannon)
-function shannon(larguraBandaHz, sinalRuidoDb) {
-    return larguraBandaHz * Math.log2(1 + Math.pow(10, sinalRuidoDb / 10));
+function shannon() {
+    let larguraBandaHz = document.getElementById('shannon-larguraBandaHz').value;
+    let sinalRuidoDb = document.getElementById('shannon-sinalRuidoDb').value;
+
+    if(!larguraBandaHz || !sinalRuidoDb) {
+        alert('Por favor, preencha todos os parâmetros!');
+        return;
+    }
+
+    var resultado = larguraBandaHz * Math.log2(1 + Math.pow(10, sinalRuidoDb / 10))
+
+    document.getElementById('shannon-result').innerHTML = resultado.toFixed(2) + ' bps'
 }
 
 // Função para determinar a Taxa de Nyquist
