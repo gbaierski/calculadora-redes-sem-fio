@@ -33,11 +33,11 @@
                         <i class="fa-solid fa-arrow-down-short-wide operation-icon text-white"></i>
                         <span class="operation-name text-white">Nyquist</span>
                     </div>
-                    <div class="operation" onclick="load('mwdbm')">
+                    <div class="operation" onclick="load('mwToDbm')">
                         <i class="fa-solid fa-right-left operation-icon text-white"></i>
                         <span class="operation-name text-white">mW para dBm</span>
                     </div>
-                    <div class="operation" onclick="load('dbmmw')">
+                    <div class="operation" onclick="load('dbmToMw')">
                         <i class="fa-solid fa-right-left fa-flip-horizontal operation-icon text-white"></i>
                         <span class="operation-name text-white">dBm para mW</span>
                     </div>
@@ -132,13 +132,55 @@
                     <button class="calculate-button text-white" type="button" onclick="nyquist()">Calcular</button>
                 </div>
             </div>
-            <div class="calculator-box" id="mwdbm">
+            <div class="calculator-box" id="mwToDbm">
                 <h3 class="calculator-title text-white">Conversão de mW para dBm:</h3>
                 <h5 class="calculator-description text-white">Realizar a conversão de potência de miliwatts (mW) para decibéis-milliwatts (dBm)</h5>
+                <div class="calculator-form">
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="mwToDbm-potenciaMW"><b>Potência</b>:</label>
+                        <input class="calculator-input" id="mwToDbm-potenciaMW" name="mwToDbm-potenciaMW" type="number" value="" onkeyup="fillFormula(this.value, 'mwToDbm', 'potenciaMW', 'mW')">
+                        <span class="calculator-measurement text-white">mW</span>
+                    </div>
+                </div>
+                <div class="calculator-formula text-white">
+                    <div class="calculator-tooltip"><b>dBm</b>
+                        <span class="calculator-tooltiptext">Potência <br>(dBm)</span>
+                    </div>
+                    = 10 * log10(
+                    <div class="calculator-tooltip"><b id="mwToDbm-campo-potenciaMW">mW</b>
+                        <span class="calculator-tooltiptext">Potência <br>(mW)</span>
+                    </div>
+                    )
+                </div>
+                <div id="mwToDbm-result" class="calculator-result text-white"></div>
+                <div class="calculate-box">
+                    <button class="calculate-button text-white" type="button" onclick="mwToDbm()">Calcular</button>
+                </div>
             </div>
-            <div class="calculator-box" id="dbmmw">
+            <div class="calculator-box" id="dbmToMw">
                 <h3 class="calculator-title text-white">Conversão de dBm para mW:</h3>
                 <h5 class="calculator-description text-white">Efetuar a conversão de decibéis-milliwatts (dBm) para miliwatts (mW)</h5>
+                <div class="calculator-form">
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="dbmToMw-potenciaDBm"><b>Potência</b>:</label>
+                        <input class="calculator-input" id="dbmToMw-potenciaDBm" name="dbmToMw-potenciaDBm" type="number" value="" onkeyup="fillFormula(this.value, 'dbmToMw', 'potenciaDBm', 'dBm')">
+                        <span class="calculator-measurement text-white">dBm</span>
+                    </div>
+                </div>
+                <div class="calculator-formula text-white">
+                    <div class="calculator-tooltip"><b>mW</b>
+                        <span class="calculator-tooltiptext">Potência <br>(mW)</span>
+                    </div>
+                    = 10^(
+                    <div class="calculator-tooltip"><b id="dbmToMw-campo-potenciaDBm">dBm</b>
+                        <span class="calculator-tooltiptext">Potência <br>(dBm)</span>
+                    </div>
+                    /10)
+                </div>
+                <div id="dbmToMw-result" class="calculator-result text-white"></div>
+                <div class="calculate-box">
+                    <button class="calculate-button text-white" type="button" onclick="dbmToMw()">Calcular</button>
+                </div>
             </div>
             <div class="calculator-box" id="eirp">
                 <h3 class="calculator-title text-white">EIRP (Effective Isotropic Radiated Power):</h3>
