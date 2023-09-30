@@ -713,6 +713,7 @@ input::-webkit-inner-spin-button {
 
     .calculator-label {
         font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
     }
 
     .calculator-input {
@@ -721,15 +722,17 @@ input::-webkit-inner-spin-button {
         padding: 5px;
         border: none;
         outline: none;
+        font-size: 0.8rem;
     }
 
     .calculator-measurement {
         font-family: 'Montserrat', sans-serif;
+        font-size: 0.8rem;
     }
 
     .calculator-formula {
         margin-top: 30px;
-        font-size: 1.4rem;
+        font-size: 1rem;
         text-align: center;
         font-family: 'Montserrat', sans-serif;
     }
@@ -763,7 +766,7 @@ input::-webkit-inner-spin-button {
 
     .calculator-result {
         margin-top: 30px;
-        font-size: 1.7rem;
+        font-size: 1.2rem;
         text-align: center;
         font-family: 'Montserrat', sans-serif;
     }
