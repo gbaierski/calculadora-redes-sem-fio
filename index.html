@@ -70,12 +70,12 @@
                 <div class="calculator-form">
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="shannon-larguraBandaHz"><b>Largura de banda</b>:</label>
-                        <input class="calculator-input" id="shannon-larguraBandaHz" name="shannon-larguraBandaHz" type="number" value="">
+                        <input class="calculator-input" id="shannon-larguraBandaHz" name="shannon-larguraBandaHz" type="number" value="" onkeyup="fillFormula(this.value, 'shannon', 'larguraBandaHz', 'B')">
                         <span class="calculator-measurement text-white">Hz</span>
                     </div>
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="shannon-sinalRuidoDb"><b>Sinal-Ruído</b>:</label>
-                        <input class="calculator-input" id="shannon-sinalRuidoDb" name="shannon-sinalRuidoDb" type="number" value="">
+                        <input class="calculator-input" id="shannon-sinalRuidoDb" name="shannon-sinalRuidoDb" type="number" value="" onkeyup="fillFormula(this.value, 'shannon', 'sinalRuidoDb', 'S/R')">
                         <span class="calculator-measurement text-white">Db</span>
                     </div>
                 </div>
@@ -84,7 +84,7 @@
                         <span class="calculator-tooltiptext">Capacidade Máxima de Canal <br>(bps)</span>
                     </div>
                     =
-                    <div class="calculator-tooltip"><b id="shannon-campo-larguraBandaHz">L</b>
+                    <div class="calculator-tooltip"><b id="shannon-campo-larguraBandaHz">B</b>
                         <span class="calculator-tooltiptext">Largura de banda <br>(Hz)</span>
                     </div>
                     * log2(1 + 10^(
@@ -102,6 +102,35 @@
             <div class="calculator-box" id="nyquist">
                 <h3 class="calculator-title text-white">Nyquist - Taxa de Nyquist:</h3>
                 <h5 class="calculator-description text-white">Determinar a taxa de amostragem mínima necessária para recuperar um sinal adequadamente</h5>
+                <div class="calculator-form">
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="nyquist-larguraBandaHz"><b>Largura de banda</b>:</label>
+                        <input class="calculator-input" id="nyquist-larguraBandaHz" name="nyquist-larguraBandaHz" type="number" value="" onkeyup="fillFormula(this.value, 'nyquist', 'larguraBandaHz', 'B')">
+                        <span class="calculator-measurement text-white">Hz</span>
+                    </div>
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="nyquist-modulacaoMultinivel"><b>Modulação multinível</b>:</label>
+                        <input class="calculator-input" id="nyquist-modulacaoMultinivel" name="nyquist-modulacaoMultinivel" type="number" value="" onkeyup="fillFormula(this.value, 'nyquist', 'modulacaoMultinivel', 'Mmn')">
+                        <span class="calculator-measurement text-white"></span>
+                    </div>
+                </div>
+                <div class="calculator-formula text-white">
+                    <div class="calculator-tooltip"><b>C</b>
+                        <span class="calculator-tooltiptext">Taxa de Nyquist <br>(bps)</span>
+                    </div>
+                    = 2 *
+                    <div class="calculator-tooltip"><b id="nyquist-campo-larguraBandaHz">B</b>
+                        <span class="calculator-tooltiptext">Largura de banda <br>(Hz)</span>
+                    </div>
+                    *
+                    <div class="calculator-tooltip"><b id="nyquist-campo-modulacaoMultinivel">Mmn</b>
+                        <span class="calculator-tooltiptext">Modulação multinível <br></span>
+                    </div>
+                </div>
+                <div id="nyquist-result" class="calculator-result text-white"></div>
+                <div class="calculate-box">
+                    <button class="calculate-button text-white" type="button" onclick="nyquist()">Calcular</button>
+                </div>
             </div>
             <div class="calculator-box" id="mwdbm">
                 <h3 class="calculator-title text-white">Conversão de mW para dBm:</h3>

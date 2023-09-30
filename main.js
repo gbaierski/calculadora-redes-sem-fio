@@ -1,14 +1,24 @@
+// Função que carrega a calculadora selecionada
 function load(type) {
     reset();
     document.getElementById(type).style = 'display: block';
 }
 
+// Função que esconde todas as calculadoras
 function reset() {
     var calculatorBoxes = document.querySelectorAll(".calculator-box");
 
     for (var i = 0; i < calculatorBoxes.length; i++) {
         calculatorBoxes[i].style.display = "none";
     }
+}
+
+// Função para preencher a fórmula de cada calculadora com os números digitados
+function fillFormula(value, calculator, field, defaultValue) {
+    if(value)
+        document.getElementById(calculator + '-campo-' + field).innerHTML = value;
+    else
+        document.getElementById(calculator + '-campo-' + field).innerHTML = defaultValue;
 }
 
 // Função para calcular a Capacidade Máxima de Canal (Shannon)
@@ -21,14 +31,25 @@ function shannon() {
         return;
     }
 
-    var resultado = larguraBandaHz * Math.log2(1 + Math.pow(10, sinalRuidoDb / 10))
+    var resultado = larguraBandaHz * Math.log2(1 + Math.pow(10, sinalRuidoDb / 10));
 
     document.getElementById('shannon-result').innerHTML = resultado.toFixed(2) + ' bps'
 }
 
 // Função para determinar a Taxa de Nyquist
-function nyquist(larguraBandaHz, modulacaoMultinivel) {
-    return 2 * larguraBandaHz * modulacaoMultinivel;
+function nyquist() {
+
+    let larguraBandaHz = document.getElementById('nyquist-larguraBandaHz').value;
+    let modulacaoMultinivel = document.getElementById('nyquist-modulacaoMultinivel').value;
+
+    if(!larguraBandaHz || !modulacaoMultinivel) {
+        alert('Por favor, preencha todos os parâmetros!');
+        return;
+    }
+
+    var resultado = 2 * larguraBandaHz * modulacaoMultinivel;
+
+    document.getElementById('nyquist-result').innerHTML = resultado.toFixed(2) + ' bps'
 }
 
 // Função para realizar a conversão de mW para dBm
