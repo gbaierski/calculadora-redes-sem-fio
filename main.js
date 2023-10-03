@@ -76,8 +76,18 @@ function dbmToMw() {
 }
 
 // Função para calcular a EIRP (Effective Isotropic Radiated Power)
-function eirp(potenciaTransmissaoDBm, ganhoAntenaDBi, perdasCaboDB) {
-    return potenciaTransmissaoDBm + ganhoAntenaDBi - perdasCaboDB;
+function eirp() {
+    let potenciaTransmissaoDBm = document.getElementById('eirp-potenciaTransmissaoDBm').value;
+    let ganhoAntenaDBi = document.getElementById('eirp-ganhoAntenaDBi').value;
+    let perdasCaboDB = document.getElementById('eirp-perdasCaboDB').value;
+
+    if(!potenciaTransmissaoDBm || !ganhoAntenaDBi || !perdasCaboDB) {
+        alert('Por favor, preencha todos os parâmetros!');
+        return;
+    }
+
+    var resultado = potenciaTransmissaoDBm + ganhoAntenaDBi - perdasCaboDB;
+    document.getElementById('eirp-result').innerHTML = resultado.toFixed(2) + ' dBm'
 }
 
 // Função para determinar o FSLP (Free Space Loss Path)

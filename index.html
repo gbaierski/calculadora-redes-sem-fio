@@ -185,6 +185,44 @@
             <div class="calculator-box" id="eirp">
                 <h3 class="calculator-title text-white">EIRP (Effective Isotropic Radiated Power):</h3>
                 <h5 class="calculator-description text-white">Calcular a potência efetiva irradiada isotropicamente por uma antena</h5>
+                <div class="calculator-form">
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="eirp-potenciaTransmissaoDBm"><b>Potência de Transmissão</b>:</label>
+                        <input class="calculator-input" id="eirp-potenciaTransmissaoDBm" name="eirp-potenciaTransmissaoDBm" type="number" value="" onkeyup="fillFormula(this.value, 'eirp', 'potenciaTransmissaoDBm', 'P')">
+                        <span class="calculator-measurement text-white">dBm</span>
+                    </div>
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="eirp-ganhoAntenaDBi"><b>Ganho da Antena</b>:</label>
+                        <input class="calculator-input" id="eirp-ganhoAntenaDBi" name="eirp-ganhoAntenaDBi" type="number" value="" onkeyup="fillFormula(this.value, 'eirp', 'ganhoAntenaDBi', 'G')">
+                        <span class="calculator-measurement text-white">dBi</span>
+                    </div>
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="eirp-perdasCaboDB"><b>Perdas no Cabo</b>:</label>
+                        <input class="calculator-input" id="eirp-perdasCaboDB" name="eirp-perdasCaboDB" type="number" value="" onkeyup="fillFormula(this.value, 'eirp', 'perdasCaboDB', 'PC')">
+                        <span class="calculator-measurement text-white">dB</span>
+                    </div>
+                </div>
+                <div class="calculator-formula text-white">
+                    <div class="calculator-tooltip"><b>EIRP</b>
+                        <span class="calculator-tooltiptext">EIRP <br>(dBm)</span>
+                    </div>
+                    =
+                    <div class="calculator-tooltip"><b id="eirp-campo-potenciaTransmissaoDBm">P</b>
+                        <span class="calculator-tooltiptext">Potência de Transmissão <br>(dBm)</span>
+                    </div>
+                    +
+                    <div class="calculator-tooltip"><b id="eirp-campo-ganhoAntenaDBi">G</b>
+                        <span class="calculator-tooltiptext">Ganho da Antena <br>(dBi)</span>
+                    </div>
+                    -
+                    <div class="calculator-tooltip"><b id="eirp-campo-perdasCaboDB">PC</b>
+                        <span class="calculator-tooltiptext">Perdas no Cabo <br>(dB)</span>
+                    </div>
+                </div>
+                <div id="eirp-result" class="calculator-result text-white"></div>
+                <div class="calculate-box">
+                    <button class="calculate-button text-white" type="button" onclick="eirp()">Calcular</button>
+                </div>
             </div>
             <div class="calculator-box" id="fslp">
                 <h3 class="calculator-title text-white">FSLP (Free Space Loss Path):</h3>
