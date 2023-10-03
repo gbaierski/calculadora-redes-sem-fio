@@ -91,8 +91,17 @@ function eirp() {
 }
 
 // Função para determinar o FSLP (Free Space Loss Path)
-function fslp(distanciaKm, frequenciaMHz) {
-    return 32.4 + 20 * Math.log10(distanciaKm) + 20 * Math.log10(frequenciaMHz);
+function fslp() {
+    let distanciaKm = document.getElementById('fslp-distanciaKm').value;
+    let frequenciaMHz = document.getElementById('fslp-frequenciaMHz').value;
+
+    if(!distanciaKm || !frequenciaMHz) {
+        alert('Por favor, preencha todos os parâmetros!');
+        return;
+    }
+
+    var resultado = 32.4 + 20 * Math.log10(distanciaKm) + 20 * Math.log10(frequenciaMHz);
+    document.getElementById('fslp-result').innerHTML = resultado.toFixed(2) + ' dB'
 }
 
 // Função para calcular o RSL (Received Signal Level)

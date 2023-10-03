@@ -198,7 +198,7 @@
                     </div>
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="eirp-perdasCaboDB"><b>Perdas no Cabo</b>:</label>
-                        <input class="calculator-input" id="eirp-perdasCaboDB" name="eirp-perdasCaboDB" type="number" value="" onkeyup="fillFormula(this.value, 'eirp', 'perdasCaboDB', 'PC')">
+                        <input class="calculator-input" id="eirp-perdasCaboDB" name="eirp-perdasCaboDB" type="number" value="" onkeyup="fillFormula(this.value, 'eirp', 'perdasCaboDB', 'pc')">
                         <span class="calculator-measurement text-white">dB</span>
                     </div>
                 </div>
@@ -215,7 +215,7 @@
                         <span class="calculator-tooltiptext">Ganho da Antena <br>(dBi)</span>
                     </div>
                     -
-                    <div class="calculator-tooltip"><b id="eirp-campo-perdasCaboDB">PC</b>
+                    <div class="calculator-tooltip"><b id="eirp-campo-perdasCaboDB">pc</b>
                         <span class="calculator-tooltiptext">Perdas no Cabo <br>(dB)</span>
                     </div>
                 </div>
@@ -227,6 +227,37 @@
             <div class="calculator-box" id="fslp">
                 <h3 class="calculator-title text-white">FSLP (Free Space Loss Path):</h3>
                 <h5 class="calculator-description text-white">Determinar a perda de potência em uma transmissão sem fio em um espaço livre de obstáculos</h5>
+                <div class="calculator-form">
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="fslp-distanciaKm"><b>Distância</b>:</label>
+                        <input class="calculator-input" id="fslp-distanciaKm" name="fslp-distanciaKm" type="number" value="" onkeyup="fillFormula(this.value, 'fslp', 'distanciaKm', 'd')">
+                        <span class="calculator-measurement text-white">Km</span>
+                    </div>
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="fslp-frequenciaMHz"><b>Frequência</b>:</label>
+                        <input class="calculator-input" id="fslp-frequenciaMHz" name="fslp-frequenciaMHz" type="number" value="" onkeyup="fillFormula(this.value, 'fslp', 'frequenciaMHz', 'f')">
+                        <span class="calculator-measurement text-white">MHz</span>
+                    </div>
+                </div>
+                <div class="calculator-formula text-white">
+                    <div class="calculator-tooltip"><b>FSLP</b>
+                        <span class="calculator-tooltiptext">FSLP <br>(dB)</span>
+                    </div>
+                    = 32,4 + 20 * log10(
+                    <div class="calculator-tooltip"><b id="fslp-campo-distanciaKm">d</b>
+                        <span class="calculator-tooltiptext">Distância <br>(Km)</span>
+                    </div>
+                    )
+                    + log10(
+                    <div class="calculator-tooltip"><b id="fslp-campo-frequenciaMHz">f</b>
+                        <span class="calculator-tooltiptext">Frequência <br>(MHz)</span>
+                    </div>
+                    )
+                </div>
+                <div id="fslp-result" class="calculator-result text-white"></div>
+                <div class="calculate-box">
+                    <button class="calculate-button text-white" type="button" onclick="fslp()">Calcular</button>
+                </div>
             </div>
             <div class="calculator-box" id="rsl">
                 <h3 class="calculator-title text-white">RSL (Received Signal Level):</h3>
