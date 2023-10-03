@@ -149,6 +149,7 @@ input::-webkit-inner-spin-button {
 
     .calculator-box {
         width: 95%;
+        min-height: 550px;
         padding: 30px;
         margin: 30px;
         border-radius: 10px;
