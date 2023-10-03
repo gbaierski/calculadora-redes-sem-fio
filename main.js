@@ -105,8 +105,7 @@ function fslp() {
 }
 
 // Função para calcular o RSL (Received Signal Level)
-function rsl(potenciaTransmissaoDBm, ganhoAntenaTXDBi, perdasCaboTXDB, ganhoAntenaRXDBi, perdasCaboRXDB, distanciaKm, frequenciaMHz) {
-    const freeSpaceLossPath = calcularFSLP(distanciaKm, frequenciaMHz);
+function rsl(potenciaTransmissaoDBm, ganhoAntenaTXDBi, perdasCaboTXDB, freeSpaceLossPath, ganhoAntenaRXDBi, perdasCaboRXDB) {
     return potenciaTransmissaoDBm + ganhoAntenaTXDBi - perdasCaboTXDB - freeSpaceLossPath + ganhoAntenaRXDBi - perdasCaboRXDB;
 }
 
