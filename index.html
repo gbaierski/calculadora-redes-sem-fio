@@ -265,32 +265,32 @@
                 <div class="calculator-form">
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="rsl-potenciaTransmissaoDBm"><b>Potência de Transmissão</b>:</label>
-                        <input class="calculator-input" id="rsl-potenciaTransmissaoDBm" name="rsl-potenciaTransmissaoDBm" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'potenciaTransmissaoDBm', 'd')">
+                        <input class="calculator-input" id="rsl-potenciaTransmissaoDBm" name="rsl-potenciaTransmissaoDBm" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'potenciaTransmissaoDBm', 'P')">
                         <span class="calculator-measurement text-white">dBm</span>
                     </div>
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="rsl-ganhoAntenaTXDBi"><b>Ganho da Antena TX</b>:</label>
-                        <input class="calculator-input" id="rsl-ganhoAntenaTXDBi" name="rsl-ganhoAntenaTXDBi" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'ganhoAntenaTXDBi', 'f')">
+                        <input class="calculator-input" id="rsl-ganhoAntenaTXDBi" name="rsl-ganhoAntenaTXDBi" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'ganhoAntenaTXDBi', 'Gtx')">
                         <span class="calculator-measurement text-white">dBi</span>
                     </div>
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="rsl-perdasCaboTXDB"><b>Perdas no Cabo TX</b>:</label>
-                        <input class="calculator-input" id="rsl-perdasCaboTXDB" name="rsl-perdasCaboTXDB" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'perdasCaboTXDB', 'f')">
+                        <input class="calculator-input" id="rsl-perdasCaboTXDB" name="rsl-perdasCaboTXDB" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'perdasCaboTXDB', 'Ptx')">
                         <span class="calculator-measurement text-white">dB</span>
                     </div>
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="rsl-freeSpaceLossPath"><b>Free Space Loss Path</b>:</label>
-                        <input class="calculator-input" id="rsl-freeSpaceLossPath" name="rsl-freeSpaceLossPath" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'freeSpaceLossPath', 'f')">
+                        <input class="calculator-input" id="rsl-freeSpaceLossPath" name="rsl-freeSpaceLossPath" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'freeSpaceLossPath', 'FSLP')">
                         <span class="calculator-measurement text-white">dB</span>
                     </div>
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="rsl-ganhoAntenaRXDBi"><b>Ganho da Antena RX</b>:</label>
-                        <input class="calculator-input" id="rsl-ganhoAntenaRXDBi" name="rsl-ganhoAntenaRXDBi" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'ganhoAntenaRXDBi', 'f')">
+                        <input class="calculator-input" id="rsl-ganhoAntenaRXDBi" name="rsl-ganhoAntenaRXDBi" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'ganhoAntenaRXDBi', 'Grx')">
                         <span class="calculator-measurement text-white">dBi</span>
                     </div>
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="rsl-perdasCaboRXDB"><b>Perdas no Cabo RX</b>:</label>
-                        <input class="calculator-input" id="rsl-perdasCaboRXDB" name="rsl-perdasCaboRXDB" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'perdasCaboRXDB', 'f')">
+                        <input class="calculator-input" id="rsl-perdasCaboRXDB" name="rsl-perdasCaboRXDB" type="number" value="" onkeyup="fillFormula(this.value, 'rsl', 'perdasCaboRXDB', 'Prx')">
                         <span class="calculator-measurement text-white">dB</span>
                     </div>
                 </div>
@@ -299,27 +299,27 @@
                         <span class="calculator-tooltiptext">RSL <br>(dBm)</span>
                     </div>
                     =
-                    <div class="calculator-tooltip"><b id="rsl-campo-potenciaTransmissaoDBm">d</b>
+                    <div class="calculator-tooltip"><b id="rsl-campo-potenciaTransmissaoDBm">P</b>
                         <span class="calculator-tooltiptext">Potência de Transmissão <br>(dBm)</span>
                     </div>
                     +
-                    <div class="calculator-tooltip"><b id="rsl-campo-ganhoAntenaTXDBi">f</b>
+                    <div class="calculator-tooltip"><b id="rsl-campo-ganhoAntenaTXDBi">Gtx</b>
                         <span class="calculator-tooltiptext">Ganho da Antena TX <br>(dBi)</span>
                     </div>
                     -
-                    <div class="calculator-tooltip"><b id="rsl-campo-perdasCaboTXDB">f</b>
+                    <div class="calculator-tooltip"><b id="rsl-campo-perdasCaboTXDB">Ptx</b>
                         <span class="calculator-tooltiptext">Perdas no Cabo TX <br>(dB)</span>
                     </div>
                     -
-                    <div class="calculator-tooltip"><b id="rsl-campo-freeSpaceLossPath">f</b>
+                    <div class="calculator-tooltip"><b id="rsl-campo-freeSpaceLossPath">FSLP</b>
                         <span class="calculator-tooltiptext">Free Space Loss Path <br>dB</span>
                     </div>
                     +
-                    <div class="calculator-tooltip"><b id="rsl-campo-ganhoAntenaRXDBi">f</b>
+                    <div class="calculator-tooltip"><b id="rsl-campo-ganhoAntenaRXDBi">Grx</b>
                         <span class="calculator-tooltiptext">Ganho da Antena RX <br>(dBi)</span>
                     </div>
                     -
-                    <div class="calculator-tooltip"><b id="rsl-campo-perdasCaboRXDB">f</b>
+                    <div class="calculator-tooltip"><b id="rsl-campo-perdasCaboRXDB">Prx</b>
                         <span class="calculator-tooltiptext">Perdas no Cabo RX <br>(dB)</span>
                     </div>
                 </div>

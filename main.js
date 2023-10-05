@@ -31,7 +31,7 @@ function shannon() {
         return;
     }
 
-    var resultado = larguraBandaHz * Math.log2(1 + Math.pow(10, sinalRuidoDb / 10));
+    var resultado = Number(larguraBandaHz) * Math.log2(1 + Math.pow(10, Number(sinalRuidoDb) / 10));
     document.getElementById('shannon-result').innerHTML = resultado.toFixed(2) + ' bps'
 }
 
@@ -45,7 +45,7 @@ function nyquist() {
         return;
     }
 
-    var resultado = 2 * larguraBandaHz * modulacaoMultinivel;
+    var resultado = 2 * Number(larguraBandaHz) * Number(modulacaoMultinivel);
     document.getElementById('nyquist-result').innerHTML = resultado.toFixed(2) + ' bps'
 }
 
@@ -58,7 +58,7 @@ function mwToDbm() {
         return;
     }
 
-    var resultado = 10 * Math.log10(potenciaMW);
+    var resultado = 10 * Math.log10(Number(potenciaMW));
     document.getElementById('mwToDbm-result').innerHTML = resultado.toFixed(2) + ' dBm'
 }
 
@@ -71,7 +71,7 @@ function dbmToMw() {
         return;
     }
 
-    var resultado = Math.pow(10, potenciaDBm / 10);
+    var resultado = Math.pow(10, Number(potenciaDBm) / 10);
     document.getElementById('dbmToMw-result').innerHTML = resultado.toFixed(2) + ' mW'
 }
 
@@ -86,7 +86,7 @@ function eirp() {
         return;
     }
 
-    var resultado = potenciaTransmissaoDBm + ganhoAntenaDBi - perdasCaboDB;
+    var resultado = Number(potenciaTransmissaoDBm) + Number(ganhoAntenaDBi) - Number(perdasCaboDB);
     document.getElementById('eirp-result').innerHTML = resultado.toFixed(2) + ' dBm'
 }
 
@@ -100,13 +100,26 @@ function fslp() {
         return;
     }
 
-    var resultado = 32.4 + 20 * Math.log10(distanciaKm) + 20 * Math.log10(frequenciaMHz);
+    var resultado = 32.4 + 20 * Math.log10(Number(distanciaKm)) + 20 * Math.log10(Number(frequenciaMHz));
     document.getElementById('fslp-result').innerHTML = resultado.toFixed(2) + ' dB'
 }
 
 // Função para calcular o RSL (Received Signal Level)
-function rsl(potenciaTransmissaoDBm, ganhoAntenaTXDBi, perdasCaboTXDB, freeSpaceLossPath, ganhoAntenaRXDBi, perdasCaboRXDB) {
-    return potenciaTransmissaoDBm + ganhoAntenaTXDBi - perdasCaboTXDB - freeSpaceLossPath + ganhoAntenaRXDBi - perdasCaboRXDB;
+function rsl() {
+    let potenciaTransmissaoDBm = document.getElementById('rsl-potenciaTransmissaoDBm').value;
+    let ganhoAntenaTXDBi = document.getElementById('rsl-ganhoAntenaTXDBi').value;
+    let perdasCaboTXDB = document.getElementById('rsl-perdasCaboTXDB').value;
+    let freeSpaceLossPath = document.getElementById('rsl-freeSpaceLossPath').value;
+    let ganhoAntenaRXDBi = document.getElementById('rsl-ganhoAntenaRXDBi').value;
+    let perdasCaboRXDB = document.getElementById('rsl-perdasCaboRXDB').value;
+
+    if(!potenciaTransmissaoDBm || !ganhoAntenaTXDBi || !perdasCaboTXDB || !freeSpaceLossPath || !ganhoAntenaRXDBi || !perdasCaboRXDB) {
+        alert('Por favor, preencha todos os parâmetros!');
+        return;
+    }
+
+    var resultado = Number(potenciaTransmissaoDBm) + Number(ganhoAntenaTXDBi) - Number(perdasCaboTXDB) - Number(freeSpaceLossPath) + Number(ganhoAntenaRXDBi) - Number(perdasCaboRXDB);
+    document.getElementById('rsl-result').innerHTML = resultado.toFixed(2) + ' dBm'
 }
 
 // Função para determinar o Raio da zona de Fresnel
