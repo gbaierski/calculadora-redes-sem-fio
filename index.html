@@ -76,7 +76,7 @@
                     <div class="calculator-input-box">
                         <label class="calculator-label text-white" for="shannon-sinalRuidoDb"><b>Sinal-Ruído</b>:</label>
                         <input class="calculator-input" id="shannon-sinalRuidoDb" name="shannon-sinalRuidoDb" type="number" value="" onkeyup="fillFormula(this.value, 'shannon', 'sinalRuidoDb', 'S/R')">
-                        <span class="calculator-measurement text-white">Db</span>
+                        <span class="calculator-measurement text-white">Dbm</span>
                     </div>
                 </div>
                 <div class="calculator-formula text-white">
@@ -89,7 +89,7 @@
                     </div>
                     * log2(1 + 10^(
                     <div class="calculator-tooltip"><b id="shannon-campo-sinalRuidoDb">S/R</b>
-                        <span class="calculator-tooltiptext">Sinal-Ruído <br>(Mw)</span>
+                        <span class="calculator-tooltiptext">Sinal-Ruído <br>(Dbm)</span>
                     </div>
                     /10)
                     )
@@ -331,6 +331,49 @@
             <div class="calculator-box" id="fresnel">
                 <h3 class="calculator-title text-white">Fresnel Zone:</h3>
                 <h5 class="calculator-description text-white">Determinar o raio da zona de Fresnel, uma área crucial que deve ser mantida livre de obstruções para garantir uma comunicação confiável</h5>
+                <div class="calculator-form">
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="fresnel-DAO"><b>Distância A até o objeto</b>:</label>
+                        <input class="calculator-input" id="fresnel-DAO" name="fresnel-DAO" type="number" value="" onkeyup="fillFormula(this.value, 'fresnel', 'DAO', 'DAO')">
+                        <span class="calculator-measurement text-white">Km</span>
+                    </div>
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="fresnel-distanciaKm"><b>Distância total</b>:</label>
+                        <input class="calculator-input" id="fresnel-distanciaKm" name="fresnel-distanciaKm" type="number" value="" onkeyup="fillFormula(this.value, 'fresnel', 'distanciaKm', 'd')">
+                        <span class="calculator-measurement text-white">Km</span>
+                    </div>
+                    <div class="calculator-input-box">
+                        <label class="calculator-label text-white" for="fresnel-frequenciaMHz"><b>Frequência</b>:</label>
+                        <input class="calculator-input" id="fresnel-frequenciaMHz" name="fresnel-frequenciaMHz" type="number" value="" onkeyup="fillFormula(this.value, 'fresnel', 'frequenciaMHz', 'f')">
+                        <span class="calculator-measurement text-white">MHz</span>
+                    </div>
+                </div>
+                <div class="calculator-formula text-white">
+                    <div class="calculator-tooltip"><b>R</b>
+                        <span class="calculator-tooltiptext">Raio de Fresnel <br>(m)</span>
+                    </div>
+                    = 550 * √((
+                    <div class="calculator-tooltip"><b id="fresnel-campo-DAO">DAO</b>
+                        <span class="calculator-tooltiptext">Distância A até o objeto <br>(Km)</span>
+                    </div>
+                    *
+                    <div class="calculator-tooltip"><b id="fresnel-campo-DBO">DBO</b>
+                        <span class="calculator-tooltiptext">Distância B até o objeto <br>(Km)</span>
+                    </div>
+                    )÷(
+                    <div class="calculator-tooltip"><b id="fresnel-campo-distanciaKm">d</b>
+                        <span class="calculator-tooltiptext">Distância total <br>(Km)</span>
+                    </div>
+                    *
+                    <div class="calculator-tooltip"><b id="fresnel-campo-frequenciaMHz">f</b>
+                        <span class="calculator-tooltiptext">Frequência <br>(MHz)</span>
+                    </div>
+                    ))
+                </div>
+                <div id="fresnel-result" class="calculator-result text-white"></div>
+                <div class="calculate-box">
+                    <button class="calculate-button text-white" type="button" onclick="fresnel()">Calcular</button>
+                </div>
             </div>
         </div>
     </main>

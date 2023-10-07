@@ -123,6 +123,19 @@ function rsl() {
 }
 
 // Função para determinar o Raio da zona de Fresnel
-function fresnel(DAO, DBO, distanciaKm, frequenciaMHz) {
-    return 550 * Math.sqrt((DAO * DBO) / (distanciaKm * frequenciaMHz));
+function fresnel() {
+    let DAO = document.getElementById('fresnel-DAO').value;
+    let distanciaKm = document.getElementById('fresnel-distanciaKm').value;
+    let DBO = Number(distanciaKm) - Number(DAO);
+    let frequenciaMHz = document.getElementById('fresnel-frequenciaMHz').value;
+
+    if(!DAO || !distanciaKm || !frequenciaMHz) {
+        alert('Por favor, preencha todos os parâmetros!');
+        return;
+    }
+ 
+    fillFormula(DBO.toFixed(2), 'fresnel', 'DBO', 'DBO')
+
+    var resultado = 550 * Math.sqrt((Number(DAO) * Number(DBO)) / (Number(distanciaKm) * Number(frequenciaMHz)));
+    document.getElementById('fresnel-result').innerHTML = resultado.toFixed(2) + ' m'
 }
