@@ -137,5 +137,7 @@ function fresnel() {
     fillFormula(DBO.toFixed(2), 'fresnel', 'DBO', 'DBO')
 
     var resultado = 550 * Math.sqrt((Number(DAO) * Number(DBO)) / (Number(distanciaKm) * Number(frequenciaMHz)));
-    document.getElementById('fresnel-result').innerHTML = resultado.toFixed(2) + ' m'
+    var margem60 = resultado * 0.6;
+    document.getElementById('fresnel-result').innerHTML = '<b>100% =</b> ' + resultado.toFixed(2) + ' m' + '<br>';
+    document.getElementById('fresnel-result').innerHTML += '<b>60% =</b> ' + margem60.toFixed(2) + ' m'
 }
